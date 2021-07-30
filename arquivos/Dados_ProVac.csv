@@ -1,0 +1,11 @@
+Codigo_Estado;Estado;Codigo_Cidade;Cidade;Codigo_Cidade_Estado;Codigo_Bairro;Bairro;Codigo_Bairro_Cidade;Codigo_Logradouro;tipo;Logradouro;numero;complemento;cep;codigo_bairro;Codigo_Pessoa;nome;cpf;data_nascimento;Codigo_Enfermeiro;cip;Codigo_Enfermeiro_Pessoa;Codigo_Paciente;comorbidade;Codigo_Paciente_Pessoa;Codigo_Paciente_Vacinado;data_dose;Codigo_Paciente_Vacinado_Vacina;Codigo_Paciente_Vacinado_Paciente;Aplicador;Codigo_Vacina;Vacina aplicada;lote
+1;ES;1;Serra;1;1;Eurico Salles;1;10;Rua;R. dos Colibrís;32;;29160-171;1;1;Alonso Marques Tigre;674.654.828-79;1980-01-23;;;;1;Diabete mellitus 1;1;1;2021-05-20;1;1;Alonso Marques Tigre;1;CoronaVac;BR001563L-A2
+1;ES;1;Serra;1;1;Eurico Salles;1;9;Rua;R. dos Perdizes;3;;29160-182;1;2;Ava Cavadas Belmonte;486.786.989-93;1976-04-10;;;;2;Asma;2;2;2021-06-20;1;2;Ava Cavadas Belmonte;1;CoronaVac;BR001563L-A2
+1;ES;1;Serra;1;1;Eurico Salles;1;8;Rua;R. dos Pavões;74;;29160-162;1;3;Nathan Dourado Silvestre;338.024.409-00;1990-11-11;;;;3;;3;3;2021-03-20;2;3;Nathan Dourado Silvestre;2;AstraZeneca;BR001563L-B2
+2;SP;2;São Paulo;2;2;Vila Mariana;2;7;Av;Lins de Vasconcelos;12;;04112-001;2;4;Veronica Abreu Calado;228.802.538-70;1964-06-14;;;;4;Câncer;4;4;2021-05-20;2;4;Veronica Abreu Calado;2;AstraZeneca;BR001563L-B2
+2;SP;2;São Paulo;2;2;Vila Mariana;2;6;Rua;Rua Coronel Artur Godói;62;;04018-050;2;5;Jonathan Caeiro Valentim;743.482.915-00;1988-01-01;;;;5;;5;5;2021-04-20;2;5;Jonathan Caeiro Valentim;2;AstraZeneca;BR001563L-B2
+3;RJ;3;Rio de Janeiro;3;3;Botafogo;3;5;Rua;Barão de Lucena;67;;22260-020;3;6;Deise Mansilha Pedroso;349.685.624-62;1987-11-23;;;;6;Asma;6;6;2021-04-20;3;6;Deise Mansilha Pedroso;3;Pfizer;BR001563L-C2
+3;RJ;3;Rio de Janeiro;3;3;Botafogo;3;4;Rua;Rua Dona Mariana;123;;22280-020;3;7;Ananda Abranches Lages;680.761.567-18;1955-12-23;;;;7;;7;7;2021-05-20;3;7;Ananda Abranches Lages;3;Pfizer;BR001563L-C2
+3;RJ;3;Rio de Janeiro;3;3;Botafogo;3;3;Rua;Estácio Coimbra;20;Rua do California Coffee;22260-010;3;10;Imran Caiado Oleiro;474.309.112-85;1990-07-08;3;TM3CX;10;;;;;;;;;;;
+1;ES;1;Serra;1;1;Eurico Salles;1;1;Rua;Rua dos Sábias;23;;29160-260;1;8;Simone Nolasco Perdigão;568.918.569-81;1970-02-24;1;8PQSM;8;;;;;;;;;;;
+2;SP;2;São Paulo;2;2;Vila Mariana;2;2;Rua;Rua Comendador Paulo Brancato;46;;04017-100;2;9;Kaya Liberato Prada;392.496.812-83;1990-02-07;2;RUSFV;9;;;;;;;;;;;
