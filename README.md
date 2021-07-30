@@ -5,7 +5,7 @@ Trabalho desenvolvido durante a disciplina de BD1
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-Kellen Moura Ferreira:email_primeiro_componente@dominio.com<br>
+Kellen Moura Ferreira:kellen.mouraf01@gmail.com<br>
 Cristhian Fontana Mattiuzzi:cristhian762@gmail.com<br>
 ...<br>
 
@@ -65,7 +65,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
         e tuplas falsas (Aplicar os conceitos de normalização abordados).   
         
-![Alt text](https://github.com/discipbd1/trab01/blob/master/images/concept_sample.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/ProVac_Conceitual.png?raw=true "Modelo Conceitual")
     
     
         
