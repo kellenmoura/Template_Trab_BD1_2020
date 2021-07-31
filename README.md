@@ -222,7 +222,6 @@ CREATE TABLE Paciente_Vacinado (
 	codigo_vacina INTEGER NOT NULL,
 	FOREIGN KEY (codigo_paciente)
 		REFERENCES PACIENTE(codigo),
-
 	FOREIGN KEY (codigo_vacina)
 		REFERENCES VACINA(codigo)
 );
@@ -318,6 +317,46 @@ INSERT INTO Vacinou (codigo, codigo_enfermeiro, codigo_paciente_vacinado) VALUES
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+	
+SELECT * FROM ESTADO;
+
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/estado.PNG?raw=true "Tabela ESTADO")
+
+SELECT * FROM CIDADE;
+
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/cidade.PNG?raw=true "Tabela CIDADE")
+
+SELECT * FROM BAIRRO;
+
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/bairro.PNG?raw=true "Tabela BAIRRO")
+
+SELECT * FROM LOGRADOURO;
+
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/logradouro.PNG?raw=true "Tabela LOGRADOURO")
+
+SELECT * FROM PESSOA;
+
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/pessoa.PNG?raw=true "Tabela PESSOA")
+
+SELECT * FROM PACIENTE;
+
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/paciente.PNG?raw=true "Tabela PACIENTE")
+
+SELECT * FROM ENFERMEIRO;
+
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/enfermeiro.PNG?raw=true "Tabela ENFERMEIRO")
+
+SELECT * FROM VACINA;
+
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/vacina.PNG?raw=true "Tabela VACINA")
+
+SELECT * FROM Paciente_Vacinado;
+
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/Paciente_Vacinado.PNG?raw=true "Tabela Paciente_Vacinado")
+
+SELECT * FROM Vacinou;
+
+![Alt text](https://github.com/cristhian762/Template_Trab_BD1_2020/blob/master/images/vacinou.PNG?raw=true "Tabela Vacinou")
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
