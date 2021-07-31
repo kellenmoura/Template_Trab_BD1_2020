@@ -77,10 +77,57 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 #### 5.2 Descrição dos dados 
     [objeto]: [descrição do objeto]
     
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+    ESTADO: Tabela que armazena os estados das pessoas.
+    CODIGO: Campo de controle da tabela estado.
+    SIGLA: Sigla que representa o estado
 
+    CIDADE: Tabela que armazena a cidade das pessoas.
+    CODIGO: Campo de controle da tabela cidade.
+    NOME: Nome da cidade.
+    CODIGO_ESTADO: Código que representa o estado em que a cidade pertence.
+
+    BAIRRO: Tabela que armazena o bairro das pessoas.
+    CODIGO: Campo de controle da tabela bairro.
+    NOME: Nome do bairro.
+    CODIGO_CIDADE: Código que representa a cidade em que o bairro pertence.
+
+    LOGRADOURO: Tabela que armazena o logradouro das pessoas.
+    CODIGO: Campo de controle da tabela logradouro.
+    TIPO: Tipo de Logradouro (Rua, Av., Viela, etc.).
+    NOME: Nome da Rua, Av., Viela, etc.
+    NUMERO: Número da residência.
+    COMPLEMENTO: Complemento ao logradouro.
+    CEP: Código de Endereçamento Postal do logradouro.
+    CODIGO_BAIRRO: Código que representa o bairro em que o logradouro está.
+
+    PESSOA: Tabela que armazena os dados dos pacientes e dos enfermeiros.
+    CODIGO: Campo de controle da tabela pessoa.
+    NOME: Nome completo da pessoa.
+    CPF: Cadastro de Pessoas Físicas cidadão.
+    DATA_NASCIMENTO: Data de nascimento da pessoa.
+    CODIGO_ENDERECO: Código que representa o logradouro em que a pessoa mora.
+
+    PACIENTE: Tabela que armazena dados particulares inerentes aos pacientes.
+    CODIGO: Campo de controle da tabela paciente.
+    CODIGO_PESSOA: Código que representa as informações de dado paciente na tabela pessoa.
+    COMOBIRDADES: Campo para registro das comorbidades de um um paciente.
+
+    ENFERMEIRO: Tabela que armazena dados particulares inerentes aos enfermeiros.
+    CODIGO: Campo de controle da tabela enfermeiro.
+    CIP: Classificação Internacional para a Prática de Enfermagem.
+    CODIGO_PESSOA: Código que representa as informações de dado paciente na tabela pessoa.
+
+    PACIENTE_VACINADO: Tabela responsável por armazenar os dados dos pacientes vacinados.
+    CODIGO:  Campo de controle da tabela Paciente_Vacinado.
+    DATA_DOSE: Dia em que a dose foi aplicada.
+    CODIGO_PACIENTE: Código que representa o paciente vacinado. 
+    CODIGO_VACINA: Código que representa a vacina aplicada.
+
+    VACINA: Tabela responsável por manter o registro das vacinas.
+    CODIGO: Campo de controle da tabela vacina.
+    NOME: Nome do imunizante disponível.
+    QUANTIDADE: Quantidade de vacinas do lote.
+    LOTE: Código que representa o lote de origem da vacina.
 
 ### 6	MODELO LÓGICO<br>
         a) inclusão do esquema lógico do banco de dados
