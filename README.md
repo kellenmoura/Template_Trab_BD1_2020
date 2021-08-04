@@ -243,6 +243,7 @@ ALTER TABLE Vacinou ADD FOREIGN KEY (codigo_paciente_vacinado) REFERENCES Pacien
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+Link do colab com as consultas: https://colab.research.google.com/drive/1b6JHsYcFPUSPE1poNnEQuQPWwE7VeF2w?usp=sharing
 	
 SELECT * FROM ESTADO;
 
