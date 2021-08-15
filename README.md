@@ -287,37 +287,141 @@ SELECT * FROM Vacinou;
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND c.nome = 'Serra';
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND e.sigla = 'MG';
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND p.data_nascimento > '1980-01-23';
+
+SELECT p.nome AS "Enfermeiro(a)", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM enfermeiro AS enf, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE enf.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo;
+
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
+	
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo;
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND (e.sigla = 'RJ' OR e.sigla = 'SP');
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND e.sigla = 'ES';
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND e.sigla <> 'ES';
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND e.sigla <> 'SP';
+
     b) Criar no mínimo 3 consultas com operadores aritméticos 
+	
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND p.data_nascimento > '1980-01-1';
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND p.data_nascimento < '1980-01-1';
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND p.data_nascimento > '1980-01-1' AND p.data_nascimento < '1990-01-1';
+
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+    
+SELECT p.nome AS "Nome", pv.data_dose AS "Data aplicação", l.nome AS "Logradouro", b.nome AS "Bairro" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo;
+
+SELECT p.nome AS "Nome", pv.data_dose AS "Data aplicação", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo;
+
+SELECT p.nome AS "Nome", pv.data_dose AS "Data aplicação", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo;
+
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
+	
+SELECT p.nome AS "Nome", pv.data_dose AS "Data aplicação", v.nome AS "Vacina aplicada", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM vacina AS v, Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pv.codigo_vacina = v.codigo AND pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND p.nome LIKE 'A%';
+
+SELECT p.nome AS "Nome", pv.data_dose AS "Data aplicação", v.nome AS "Vacina aplicada", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM vacina AS v, Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pv.codigo_vacina = v.codigo AND pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND p.nome LIKE '%A%';
+
+SELECT p.nome AS "Nome", pv.data_dose AS "Data aplicação", v.nome AS "Vacina aplicada", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM vacina AS v, Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pv.codigo_vacina = v.codigo AND pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND p.nome ILIKE '%A%';
+
+SELECT p.nome AS "Nome", pv.data_dose AS "Data aplicação", v.nome AS "Vacina aplicada", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM vacina AS v, Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pv.codigo_vacina = v.codigo AND pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND p.nome LIKE '%B%';
+
+SELECT p.nome AS "Nome", pv.data_dose AS "Data aplicação", v.nome AS "Vacina aplicada", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM vacina AS v, Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pv.codigo_vacina = v.codigo AND pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND l.nome LIKE '%A%';
+	
     b) Criar uma consulta para cada tipo de função data apresentada.
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
+
+BEGIN;
+
+DELETE FROM ESTADO WHERE codigo = 5;
+DELETE FROM ESTADO WHERE codigo = 5;
+DELETE FROM ESTADO WHERE codigo = 7;
+
+COMMIT;
+
     b) Criar minimo 3 de atualização
+
+BEGIN;
+
+UPDATE LOGRADOURO SET complemento = 'Fim da rua' WHERE codigo = 1;
+UPDATE PESSOA SET cpf = '290.932.510-58' WHERE cpf = '486.786.989-93';
+UPDATE PACIENTE SET comorbidade = 'Diabete mellitus 2' WHERE codigo = 3;
+
+COMMIT;
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
+	
+SELECT E.CODIGO AS "Codigo_Estado", E.SIGLA AS "Estado", C.CODIGO AS "Codigo_Cidade", C.NOME AS "Cidade", C.CODIGO_ESTADO AS "Codigo_Cidade_Estado", B.CODIGO AS "Codigo_Bairro", B.NOME AS "Bairro", B.CODIGO_CIDADE AS "Codigo_Bairro_Cidade", L.CODIGO AS "Codigo_Logradouro", L.tipo, L.nome AS "Logradouro", L.numero, L.complemento, L.cep, L.CODIGO_BAIRRO, P.CODIGO AS "Codigo_Pessoa", P.nome, P.cpf, P.data_nascimento, EN.CODIGO AS "Codigo_Enfermeiro", EN.CIP, EN.CODIGO_PESSOA AS "Codigo_Enfermeiro_Pessoa", PA.CODIGO AS "Codigo_Paciente", PA.comorbidade, PA.CODIGO_PESSOA AS "Codigo_Paciente_Pessoa", PV.CODIGO AS "Codigo_Paciente_Vacinado", PV.data_dose, PV.CODIGO_VACINA AS "Codigo_Paciente_Vacinado_Vacina", PV.CODIGO_PACIENTE AS "Codigo_Paciente_Vacinado_Paciente", (SELECT P.NOME FROM ENFERMEIRO AS SEF INNER JOIN PESSOA AS SP ON (SEF.CODIGO_PESSOA = SP.CODIGO) WHERE SEF.CODIGO = V.CODIGO_ENFERMEIRO) AS "Aplicador", VA.CODIGO AS "Codigo_Vacina",  VA.NOME AS "Vacina aplicada", VA.lote FROM ESTADO AS E INNER JOIN CIDADE AS C ON (E.CODIGO = C.CODIGO_ESTADO) INNER JOIN BAIRRO AS B ON(C.CODIGO = B.CODIGO_CIDADE) INNER JOIN LOGRADOURO AS L ON (B.CODIGO = L.CODIGO_BAIRRO) INNER JOIN PESSOA AS P ON (L.CODIGO = P.CODIGO_LOGRADOURO) LEFT JOIN ENFERMEIRO AS EN ON (P.CODIGO = EN.CODIGO_PESSOA) LEFT JOIN PACIENTE AS PA ON (P.CODIGO = PA.CODIGO_PESSOA) LEFT JOIN Paciente_Vacinado AS PV ON (PA.CODIGO = PV.CODIGO_PACIENTE) LEFT JOIN Vacinou AS V ON(PV.CODIGO = V.CODIGO_PACIENTE_VACINADO) LEFT JOIN VACINA AS VA ON (VA.CODIGO = PV.CODIGO_VACINA) ORDER BY p.nome;
+
     b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+	
+SELECT p.nome AS "Nome", pv.data_dose AS "Data aplicação", v.nome AS "Vacina aplicada", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM vacina AS v INNER JOIN Paciente_Vacinado AS pv ON (pv.codigo_vacina = v.codigo) INNER JOIN paciente AS pa ON (pa.codigo = pv.codigo_paciente) INNER JOIN pessoa AS p ON (pa.codigo_pessoa = p.codigo) INNER JOIN logradouro AS l ON (p.codigo_logradouro = l.codigo) INNER JOIN bairro AS b ON (l.codigo_bairro = b.codigo) INNER JOIN cidade AS c ON (b.codigo_cidade = c.codigo) INNER JOIN estado AS e ON (c.codigo_estado = e.codigo) ORDER BY p.nome DESC;
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
 
+SELECT v.nome AS "Vacina aplicada", COUNT(p.nome) AS "Número de aplicações" FROM vacina AS v INNER JOIN Paciente_Vacinado AS pv ON (pv.codigo_vacina = v.codigo) INNER JOIN paciente AS pa ON (pa.codigo = pv.codigo_paciente) INNER JOIN pessoa AS p ON (pa.codigo_pessoa = p.codigo) INNER JOIN logradouro AS l ON (p.codigo_logradouro = l.codigo) INNER JOIN bairro AS b ON (l.codigo_bairro = b.codigo) INNER JOIN cidade AS c ON (b.codigo_cidade = c.codigo) INNER JOIN estado AS e ON (c.codigo_estado = e.codigo) GROUP BY v.nome;
+
+SELECT e.sigla AS "Estado", COUNT(p.nome) AS "Vacinados por estado" FROM vacina AS v INNER JOIN Paciente_Vacinado AS pv ON (pv.codigo_vacina = v.codigo) INNER JOIN paciente AS pa ON (pa.codigo = pv.codigo_paciente) INNER JOIN pessoa AS p ON (pa.codigo_pessoa = p.codigo) INNER JOIN logradouro AS l ON (p.codigo_logradouro = l.codigo) INNER JOIN bairro AS b ON (l.codigo_bairro = b.codigo) INNER JOIN cidade AS c ON (b.codigo_cidade = c.codigo) INNER JOIN estado AS e ON (c.codigo_estado = e.codigo) GROUP BY e.sigla;
+
+SELECT p.nome AS "Enfermeiro(a)", COUNT(v.codigo) AS "Pessoas atendidas" FROM vacinou AS v INNER JOIN enfermeiro AS enf ON (enf.codigo = v.codigo_enfermeiro) INNER JOIN pessoa AS p ON (p.codigo = enf.codigo_pessoa) INNER JOIN logradouro AS l ON (p.codigo_logradouro = l.codigo) INNER JOIN bairro AS b ON (l.codigo_bairro = b.codigo) INNER JOIN cidade AS c ON (b.codigo_cidade = c.codigo) INNER JOIN estado AS e ON (c.codigo_estado = e.codigo) GROUP BY p.nome;
+
+SELECT c.nome AS "Cidade", COUNT(p.nome) AS "Vacinados por cidade" FROM vacina AS v INNER JOIN Paciente_Vacinado AS pv ON (pv.codigo_vacina = v.codigo) INNER JOIN paciente AS pa ON (pa.codigo = pv.codigo_paciente) INNER JOIN pessoa AS p ON (pa.codigo_pessoa = p.codigo) INNER JOIN logradouro AS l ON (p.codigo_logradouro = l.codigo) INNER JOIN bairro AS b ON (l.codigo_bairro = b.codigo) INNER JOIN cidade AS c ON (b.codigo_cidade = c.codigo) GROUP BY c.nome;
+
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
 
+SELECT p.nome AS "Nome", pa.codigo AS "Código do paciente", pa.comorbidade AS "Comobirdade" FROM paciente AS pa RIGHT JOIN pessoa AS p ON (pa.codigo_pessoa = p.codigo);
+
+SELECT p.nome AS "Nome", e.codigo AS "Código do enfermeiro", e.cip AS "CIP" FROM pessoa AS p LEFT JOIN enfermeiro AS e ON (e.codigo_pessoa = p.codigo);
+
+SELECT p.nome AS "Nome", e.codigo AS "Código do enfermeiro" FROM pessoa AS p FULL JOIN enfermeiro AS e ON (e.codigo_pessoa = p.codigo);
+
+SELECT p.nome AS "Nome", pa.codigo AS "Código do paciente", pa.comorbidade AS "Comobirdade" FROM pessoa AS p LEFT JOIN paciente AS pa ON (pa.codigo_pessoa = p.codigo);
+
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
+
+-- Não é cabível pois não há tabelas que tenham auto relacionamento.
+
+CREATE VIEW vacinas AS SELECT v.nome AS "Vacina aplicada", COUNT(p.nome) AS "Número de aplicações" FROM vacina AS v INNER JOIN Paciente_Vacinado AS pv ON (pv.codigo_vacina = v.codigo) INNER JOIN paciente AS pa ON (pa.codigo = pv.codigo_paciente) INNER JOIN pessoa AS p ON (pa.codigo_pessoa = p.codigo) INNER JOIN logradouro AS l ON (p.codigo_logradouro = l.codigo) INNER JOIN bairro AS b ON (l.codigo_bairro = b.codigo) INNER JOIN cidade AS c ON (b.codigo_cidade = c.codigo) INNER JOIN estado AS e ON (c.codigo_estado = e.codigo) GROUP BY v.nome;
+
+SELECT * FROM vacinas;
+
+DROP VIEW vacinas;
+	
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+	
+CREATE VIEW vacinas_por_estado AS SELECT e.sigla AS "Estado", COUNT(p.nome) AS "Vacinados por estado" FROM vacina AS v INNER JOIN Paciente_Vacinado AS pv ON (pv.codigo_vacina = v.codigo) INNER JOIN paciente AS pa ON (pa.codigo = pv.codigo_paciente) INNER JOIN pessoa AS p ON (pa.codigo_pessoa = p.codigo) INNER JOIN logradouro AS l ON (p.codigo_logradouro = l.codigo) INNER JOIN bairro AS b ON (l.codigo_bairro = b.codigo) INNER JOIN cidade AS c ON (b.codigo_cidade = c.codigo) INNER JOIN estado AS e ON (c.codigo_estado = e.codigo) GROUP BY e.sigla;
+
+SELECT * FROM vacinas_por_estado;
+
+DROP VIEW vacinas_por_estado;
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
 
+SELECT AVG(m.nome) AS "Média vacinas aplicadas" FROM (SELECT COUNT(p.nome) AS "nome" FROM vacina AS v INNER JOIN Paciente_Vacinado AS pv ON (pv.codigo_vacina = v.codigo) INNER JOIN paciente AS pa ON (pa.codigo = pv.codigo_paciente) INNER JOIN pessoa AS p ON (pa.codigo_pessoa = p.codigo) INNER JOIN logradouro AS l ON (p.codigo_logradouro = l.codigo) INNER JOIN bairro AS b ON (l.codigo_bairro = b.codigo) INNER JOIN cidade AS c ON (b.codigo_cidade = c.codigo) INNER JOIN estado AS e ON (c.codigo_estado = e.codigo) GROUP BY v.nome) AS m;
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND p.data_nascimento = (SELECT MIN(p.data_nascimento) FROM pessoa AS p INNER JOIN paciente AS pa ON (p.codigo = pa.codigo_pessoa));
+
+SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "Cidade", e.sigla AS "Estado" FROM Paciente_Vacinado AS pv, paciente AS pa, pessoa AS p, logradouro AS l, bairro AS b, cidade AS c, estado AS e WHERE pa.codigo = pv.codigo_paciente AND pa.codigo_pessoa = p.codigo AND p.codigo_logradouro = l.codigo AND l.codigo_bairro = b.codigo AND b.codigo_cidade = c.codigo AND c.codigo_estado = e.codigo AND p.data_nascimento = (SELECT MAX(p.data_nascimento) FROM pessoa AS p INNER JOIN paciente AS pa ON (p.codigo = pa.codigo_pessoa));
+	
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
 ### 10 RELATÓRIOS E GRÁFICOS
