@@ -536,6 +536,8 @@ SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "
 #### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
 #### b) link com exemplo de relatórios será disponiblizado pelo professor no AVA
 #### OBS: Esta é uma atividade de grande relevância no contexto do trabalho. Mantenha o foco nos 5 principais relatórios/resultados visando obter o melhor resultado possível.
+	
+	LINK COLAB: https://colab.research.google.com/drive/1lgOfr5DcsKR5X2xO5_0ZDnaxj-Nn_iSd#scrollTo=DJV5zePffObD
 
     
 
@@ -543,6 +545,9 @@ SELECT p.nome AS "Nome", l.nome AS "Logradouro", b.nome AS "Bairro", c.nome AS "
 
 #### a) Modelo (pecha kucha)<br>
 #### b) Tempo de apresentação 6:40 
+	
+	LINK SLIDE: https://docs.google.com/presentation/d/14tr_-yNBsNlDMuMP-JG3661a7ALWqIZgGt9HGyPBCPk/edit?usp=sharing
+	LINK VÍDEO: https://youtu.be/qs1SPRIjvlE
 
 ># Marco de Entrega 03: Itens 10 e 11<br>
 <br>
